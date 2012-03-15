@@ -1,5 +1,5 @@
 import unittest
-from .. import properties
+from .. import property
 
 class PropertyTest(unittest.TestCase):
 
@@ -11,7 +11,7 @@ class PropertyTest(unittest.TestCase):
         class X(object):
             def __init__(self):
                 self.calculation_count = 0
-            @properties.lazy_property
+            @property.lazy_property
             def expensive_value(self):
                 self.calculation_count += 1
                 return True
@@ -22,4 +22,8 @@ class PropertyTest(unittest.TestCase):
         self.assertEquals(1, x.calculation_count)
         self.assertTrue(x.expensive_value)
         self.assertEquals(1, x.calculation_count)
+        del x.expensive_value
+        self.assertTrue(x.expensive_value)
+        self.assertEquals(2, x.calculation_count)
+
 

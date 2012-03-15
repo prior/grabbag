@@ -9,6 +9,9 @@ class lazy_property(object):
             setattr(obj, self.attr, self.f(obj))
         return getattr(obj, self.attr)
 
+    def __set__(self, obj, value):
+        setattr(obj, self.attr, value)
+
     def __delete__(self, obj):
         if hasattr(obj, self.attr):
             delattr(obj, self.attr)
