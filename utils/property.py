@@ -1,8 +1,8 @@
-class lazy_property(object):
+class cached_property(object):
     def __init__(self, f):
-        super(lazy_property, self).__init__()
+        super(cached_property, self).__init__()
         self.f = f
-        self.attr = '_lazy_%s' % f.__name__
+        self.attr = '_cached_%s' % f.__name__
 
     def __get__(self, obj, type=None):
         if not hasattr(obj, self.attr):
@@ -16,3 +16,5 @@ class lazy_property(object):
         if hasattr(obj, self.attr):
             delattr(obj, self.attr)
 
+# for backward compatability
+class lazy_property(cached_property): pass
