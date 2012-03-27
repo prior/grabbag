@@ -17,4 +17,4 @@ class cached_property(object):
             delattr(obj, self.attr)
 
 # for backward compatability
-class lazy_property(cached_property): pass
+lazy_property = cached_property

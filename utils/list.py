@@ -1,13 +1,15 @@
-def first_not_none(list_, fallback=None):
+# specifically chose not to use *args here cuz that unnecessarily unwinds generator expressions
+def first_not_none(iterable, fallback=None):
     """ return the first item that is not None """
-    for l in list_:
-        if l is not None: return l
+    for obj in iterable:
+        if obj is not None: return obj
     return fallback
 
-def first_truthy(list_, fallback=None):
+# specifically chose not to use *args here cuz that unnecessarily unwinds generator expressions
+def first_truthy(iterable, fallback=None):
     """ return the first item that is truth """
-    for l in list_:
-        if l:  return l
+    for obj in iterable:
+        if obj: return obj
     return fallback
 
 def sort(obj, *args, **kwargs):
