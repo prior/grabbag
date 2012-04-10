@@ -12,3 +12,6 @@ def from_obj(obj, obj_attrs=None, *attrs):
             d.update(from_obj(getattr(obj,a)))
     return d
 
+def mgetattr(obj, attrs, *args): return tuple([getattr(obj, a, *args) for a in attrs])
+    
+
