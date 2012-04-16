@@ -1,7 +1,9 @@
-def merge(destination, *sources):
+def merge(destination, *sources, **kwargs):
     if isinstance(sources, dict): sources = [sources]
     for source in sources:
         if source: destination.update(source)
+    for k,v in kwargs.iteritems():
+        destination[k]=v
     return destination
 
 def mpop(d, *args, **kwargs):

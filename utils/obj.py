@@ -14,4 +14,11 @@ def from_obj(obj, obj_attrs=None, *attrs):
 
 def mgetattr(obj, attrs, *args): return tuple([getattr(obj, a, *args) for a in attrs])
     
+def nchain(obj, *attrs):
+    val = obj
+    for a in attrs:
+        if val is None: return None
+        val = getattr(val,a,None)
+    return val
+
 

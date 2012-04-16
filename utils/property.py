@@ -23,6 +23,10 @@ class cached_property(object):
 def is_cached(obj, attr): return hasattr(obj, cached_key(attr))
 def cached_value(obj, attr, default=None): return getattr(obj, cached_key(attr), default)
 def cached_key(attr): return '%s%s' % (CACHED_PREFIX, attr)
+def delete_cache(obj, *attrs): 
+    for attr in attrs: 
+        if is_cached(obj,attr): 
+            delattr(obj, cached_key(attr))
 
 
 # for backward compatability
