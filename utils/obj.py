@@ -21,4 +21,6 @@ def nchain(obj, *attrs):
         val = getattr(val,a,None)
     return val
 
-
+def ensureattr(obj, attr, val):
+    if not hasattr(obj,attr): setattr(obj,attr,val)
+    return getattr(obj,attr)
