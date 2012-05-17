@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from distutils.core import setup
 
-VERSION = '0.8.1'
+VERSION = '0.9.0'
 
 setup(
     name='utilspy',
