@@ -1,18 +1,20 @@
 #!/usr/bin/env python
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 VERSION = '0.9.0'
 
 setup(
     name='utilspy',
     version=VERSION,
-    description='Random useful python utilities that don\'t seem to exist elsewhere',
-    long_description = open('README.rst').read(),
-    author='Michael Prior',
-    author_email='prior@cracklabs.com',
-    url='https://github.com/prior/utilspy',
-    download_url='https://github.com/prior/utilspy/tarball/v%s'%VERSION,
+    author='prior',
+    author_email='mprior@hubspot.com',
+    packages=find_packages(),
+    url='https://github.com/HubSpot/utilspy',
+    download_url='https://github.com/HubSpot/utilspy/tarball/v%s'%VERSION,
     license='LICENSE.txt',
-    packages=['utils','utils.test'],
-    install_requires=[ 'nose==1.1.2' ]
+    description="A number of useful utilities that don't seem to exist elsewhere",
+    long_description=open('README.rst').read(),
+    install_requires=[],
+    platforms=['any']
 )
+
