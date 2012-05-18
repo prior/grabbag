@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
 
-VERSION = '0.9.0'
+VERSION = '0.9.1'
 
 setup(
     name='utilspy',
