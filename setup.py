@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
 
-VERSION = '0.9.1'
+VERSION = '0.10.0'
 
 setup(
     name='utilspy',
@@ -14,7 +14,9 @@ setup(
     license='LICENSE.txt',
     description="A number of useful utilities that don't seem to exist elsewhere",
     long_description=open('README.rst').read(),
-    install_requires=[],
+    install_requires=[
+        'sanetime>=4,<5'
+        ],
     platforms=['any']
 )
 

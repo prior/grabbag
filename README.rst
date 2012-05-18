@@ -8,6 +8,7 @@ Notables:
 * better error/exception wrapping + helpers, 
 * better log wrapping + helpers
 * process helpers
+* easy file locks
 
 TODO: documents somewhere somehow 
 
