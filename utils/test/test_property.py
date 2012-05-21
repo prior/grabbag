@@ -30,6 +30,7 @@ class PropertyTest(unittest.TestCase):
         self.assertFalse(x.expensive_value)
         self.assertEquals(2, x.calculation_count)
 
+    #TODO: Revisit and clean up 
     def test_dynamic_cached_property(self):
         class X(object):
             def __init__(self):
@@ -53,12 +54,6 @@ class PropertyTest(unittest.TestCase):
 #        X.blah(X.yo)
         X.yo = property.cached_property(_tmp)
         x = X()
-        from pprint import pprint
-        pprint(x.__dict__)
-        print x.yo
-        pprint(x.__dict__)
-        print x.yo
-        print x.yo
 #        x._tmp
         #X.create_caching()
         #x = X()
