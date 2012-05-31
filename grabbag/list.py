@@ -17,4 +17,6 @@ def sort(obj, *args, **kwargs):
     obj.sort(*args, **kwargs)
     return obj
 
-
+# i.e. an iterable that is not a string: from http://stackoverflow.com/questions/1835018/python-check-if-an-object-is-a-list-or-tuple-but-not-string
+def is_sequence(arg): 
+    return (not hasattr(arg, "strip") and hasattr(arg, "__getitem__") or hasattr(arg, "__iter__"))

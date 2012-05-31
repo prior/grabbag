@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
 
-VERSION = '0.11.1'
+VERSION = '0.12.0'
 
 setup(
     name='grabbag',
